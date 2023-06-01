@@ -61,6 +61,9 @@
 #define BOOTENV
 #endif
 
+// IP address
+#define CONFIG_IPADDR 192.168.1.35
+
 #define CONFIG_MFG_ENV_SETTINGS \
 	CONFIG_MFG_ENV_SETTINGS_DEFAULT \
 	"initrd_addr=0x43800000\0" \
@@ -85,9 +88,11 @@
 	"fdt_high=0xffffffffffffffff\0"		\
 	"boot_fdt=try\0" \
 	"boot_fit=no\0" \
-	"fdt_file=undefined\0" \
+	"fdt_file=imx8mp-var-dart-firefly-cp.dtb\0" \
 	"bootm_size=0x10000000\0" \
-	"ip_dyn=yes\0" \
+   "netmask=255.255.255.0\0" \
+   "gatewayip=192.168.1.1\0" \
+	"ip_dyn=no\0" \
 	"mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
 	"mmcblk=1\0" \
 	"mmcpart=1\0" \
@@ -110,7 +115,7 @@
 		"bootaux ${m7_addr};\0" \
 	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
 	"mmcargs=setenv bootargs console=${console} " \
-		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size}\0 " \
+		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size} net.ifnames=0\0 " \
 	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${bsp_script};\0" \
 	"bootscript=echo Running bootscript from mmc ...; " \
 		"source\0" \
