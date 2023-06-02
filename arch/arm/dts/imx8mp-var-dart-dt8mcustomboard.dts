@@ -7,7 +7,7 @@
 #include "imx8mp-var-dart.dtsi"
 
 / {
-	model = "Variscite DART-MX8M-PLUS on DT8MCustomBoard 2.0 and above";
+	model = "FireFLY Comprehensive Platform (CP)";
 
 	aliases {
 		gpio5 = &pca6408_1;

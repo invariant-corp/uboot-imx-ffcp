@@ -3,8 +3,8 @@
 VERSION = 2021
 PATCHLEVEL = 04
 SUBLEVEL =
-EXTRAVERSION =
-NAME =
+EXTRAVERSION = -1.0.0
+NAME = FireFLY CP U-Boot
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
