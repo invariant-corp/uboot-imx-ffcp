@@ -97,7 +97,7 @@
 	"mmcblk=1\0" \
 	"mmcpart=1\0" \
 	"mmcautodetect=yes\0" \
-	"m7_addr=0x7e0000\0" \
+	"m7_addr=0x80000000\0" \
 	"m7_bin=firefly_firmware.bin\0" \
 	"use_m7=no\0" \
 	"loadm7bin=" \
