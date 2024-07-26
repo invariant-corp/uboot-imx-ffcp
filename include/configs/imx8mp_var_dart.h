@@ -88,7 +88,7 @@
 	"fdt_high=0xffffffffffffffff\0"		\
 	"boot_fdt=try\0" \
 	"boot_fit=no\0" \
-   "fdtfile=" CONFIG_DEFAULT_FDT_FILE "\0" \
+   "fdt_file=" CONFIG_DEFAULT_FDT_FILE "\0" \
 	"bootm_size=0x10000000\0" \
    "netmask=255.255.255.0\0" \
    "gatewayip=192.168.1.1\0" \
