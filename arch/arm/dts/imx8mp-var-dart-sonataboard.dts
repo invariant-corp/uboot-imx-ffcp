@@ -7,7 +7,7 @@
 #include "imx8mp-var-dart.dtsi"
 
 / {
-	model = "Variscite DART-MX8M-PLUS v1.1 and higher";
+	model = "FireFLY Comprehensive Platform (CP)";
 
 	aliases {
 		gpio5 = &pca6408_1;
@@ -238,8 +238,8 @@
 &iomuxc {
 	pinctrl_uart1: uart1grp {
 		fsl,pins = <
-			MX8MP_IOMUXC_UART1_RXD__UART1_DCE_RX				0x40
-			MX8MP_IOMUXC_UART1_TXD__UART1_DCE_TX				0x40
+			MX8MP_IOMUXC_SAI2_RXC__UART1_DCE_RX				0x40
+			MX8MP_IOMUXC_SAI2_RXFS__UART1_DCE_TX				0x40
 		>;
 	};
 
