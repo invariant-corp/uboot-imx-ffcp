@@ -9,4 +9,20 @@ config SYS_VENDOR
 config SYS_CONFIG_NAME
 	default "imx8mp_var_dart"
 
+choice
+	prompt "FireFLY CP board variant"
+	optional
+	help
+	  Select the FireFLY Comprehensive Platform variant. This sets the
+	  default kernel DTB (fdt_file) instead of autodetecting a
+	  Variscite carrier board from the EEPROM.
+
+config FFCP_VARIANT_AO
+	bool "FireFLY CP AO"
+
+config FFCP_VARIANT_LE
+	bool "FireFLY CP LE"
+
+endchoice
+
 endif
