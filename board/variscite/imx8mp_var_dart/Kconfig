@@ -14,8 +14,9 @@ choice
 	optional
 	help
 	  Select the FireFLY Comprehensive Platform variant. This sets the
-	  default kernel DTB (fdt_file) instead of autodetecting a
-	  Variscite carrier board from the EEPROM.
+	  default carrier_name, so findfdt picks
+	  imx8mp-var-dart[-1.x|-wbe]-firefly-cp-<variant>.dtb from the SOM
+	  EEPROM revision. The CP has no Variscite carrier EEPROM.
 
 config FFCP_VARIANT_AO
 	bool "FireFLY CP AO"
