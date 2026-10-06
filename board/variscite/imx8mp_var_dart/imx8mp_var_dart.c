@@ -498,7 +498,14 @@ int board_late_init(void)
 		var_carrier_eeprom_get_revision(&carrier_eeprom, carrier_rev, sizeof(carrier_rev));
 		env_set("carrier_rev", carrier_rev);
 
-		if (var_carrier_eeprom_get_name(&carrier_eeprom, carrier_name) > 0)
+		/*
+		 * The FireFLY CP carrier has no Variscite carrier EEPROM, so
+		 * the name comes back "undefined"; keep the carrier_name default
+		 * from the environment (firefly-cp-<variant>) in that case.
+		 */
+		if (var_carrier_eeprom_get_name(&carrier_eeprom, carrier_name) > 0 &&
+		    (!(IS_ENABLED(CONFIG_FFCP_VARIANT_AO) || IS_ENABLED(CONFIG_FFCP_VARIANT_LE)) ||
+		     strcmp(carrier_name, "undefined")))
 			env_set("carrier_name", carrier_name);
 
 		/* SoM Features ENV */
